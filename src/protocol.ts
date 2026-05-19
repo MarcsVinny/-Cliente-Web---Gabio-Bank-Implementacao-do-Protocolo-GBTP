@@ -1,8 +1,6 @@
 /**
- * @file protocol.ts
- * @description Lógica simplificada para montar e ler mensagens do protocolo GBTP.
- * 
- * O professor quer ver como transformamos um OBJETO em TEXTO e vice-versa.
+ * Lógica para montar e ler mensagens do protocolo GBTP.
+ * Aqui fazemos a tradução entre objeto JS e texto puro.
  */
 
 // Definimos as operações que o banco aceita
@@ -33,8 +31,8 @@ export function buildRequest(req: GBTPRequest): string {
   const linha2 = "ACCOUNT_ID:" + req.accountId;
   const linha3 = "TO_ACCOUNT_ID:" + req.toAccountId;
   
-  // No BALANCE o professor pediu VALUE:0 (sem casas decimais)
-  // Nas outras operações usamos VALUE:100.00 (com duas casas)
+  // No BALANCE o valor enviado é 0 (sem decimais)
+  // Nas outras operações usamos o padrão com duas casas decimais
   const valorFormatado = (req.operation === 'BALANCE') ? "0" : req.value.toFixed(2);
   const linha4 = "VALUE:" + valorFormatado;
 

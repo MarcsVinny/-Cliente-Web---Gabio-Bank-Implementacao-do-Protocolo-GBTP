@@ -1,8 +1,5 @@
 /**
- * @file websocket.ts
- * @description Gerenciamento simples da conexão de rede via WebSocket.
- * 
- * Aqui é onde o "túnel" de comunicação com o servidor é aberto.
+ * Gerenciamento da conexão via WebSocket.
  */
 
 import { GBTPRequest, GBTPResponse, buildRequest, parseResponse } from './protocol';
@@ -46,11 +43,11 @@ export function conectar(): void {
     if (acaoAoMudarStatus) acaoAoMudarStatus('error', 'Não foi possível alcançar o servidor.');
   };
 
-  // Quando o servidor envia uma resposta (O CORAÇÃO DO PROTOCOLO)
+  // Quando o servidor envia uma resposta
   conexao.onmessage = function(evento) {
-    const textoBruto = evento.data; // Texto que veio do servidor
+    const textoBruto = evento.data; 
     
-    // Transformamos o texto em um objeto usando a lógica do protocol.ts
+    // Transformamos o texto em um objeto
     const respostaObjeto = parseResponse(textoBruto);
     
     // Avisamos a tela para mostrar o resultado

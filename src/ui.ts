@@ -1,6 +1,5 @@
 /**
- * @file ui.ts
- * @description Funções simples para mexer no HTML (DOM).
+ * Manipulação do DOM e interface.
  */
 
 import { GBTPResponse, Operation } from './protocol';

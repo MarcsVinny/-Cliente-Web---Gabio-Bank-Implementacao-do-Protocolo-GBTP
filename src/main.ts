@@ -1,6 +1,5 @@
 /**
- * @file main.ts
- * @description O arquivo principal que "cola" a rede com a tela.
+ * Ponto de entrada que integra a interface com a rede.
  */
 
 import { conectar, desconectar, enviarPedido, configurarAcaoMensagem, configurarAcaoStatus, estaConectado } from './websocket';
@@ -46,7 +45,7 @@ botaoConectar.addEventListener('click', function() {
   }
 });
 
-// ─── 3. BOTÃO DE ENVIAR (A MÁGICA ACONTECE AQUI) ─────────────────
+// ─── 3. ENVIO DE REQUISIÇÃO ──────────────────────────────────────
 
 const botaoEnviar = document.getElementById('btn-send')!;
 

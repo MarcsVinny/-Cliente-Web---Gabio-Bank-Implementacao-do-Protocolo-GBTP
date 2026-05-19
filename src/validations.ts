@@ -1,6 +1,5 @@
 /**
- * @file validations.ts
- * @description Validações simples para garantir que o usuário preencheu tudo certo.
+ * Validações de campos do formulário.
  */
 
 import { GBTPRequest } from './protocol';
