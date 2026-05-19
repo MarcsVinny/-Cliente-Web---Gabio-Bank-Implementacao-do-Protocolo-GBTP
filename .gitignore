@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.parcel-cache/
+.trae/
+GUIA_APRESENTACAO.md
+GUIA_GBTP_CLIENT.md
+.env

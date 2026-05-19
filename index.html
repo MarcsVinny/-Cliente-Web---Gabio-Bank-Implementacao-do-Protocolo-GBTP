@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabio Bank — Cliente GBTP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- CABEÇALHO -->
+      <header class="header">
+        <div class="header-left">
+          <div class="bank-logo">GB</div>
+          <div>
+            <h1 class="header-title">Gabio Bank</h1>
+            <p class="header-subtitle">Protocolo de Transação GBTP</p>
+          </div>
+        </div>
+        <div class="connection-area">
+          <span class="status-dot" id="status-dot"></span>
+          <span class="status-text" id="status-text">Desconectado</span>
+          <button class="btn btn-connect" id="btn-connect">Conectar</button>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- FORMULÁRIO DE OPERAÇÕES -->
+        <section class="card form-card">
+          <h2 class="card-title">Nova Transação</h2>
+
+          <div class="form-group">
+            <label class="form-label">Tipo de Operação</label>
+            <div class="operation-tabs">
+              <button class="op-tab active" data-op="BALANCE">Saldo</button>
+              <button class="op-tab" data-op="DEPOSIT">Depósito</button>
+              <button class="op-tab" data-op="WITHDRAW">Saque</button>
+              <button class="op-tab" data-op="TRANSFER">Transferência</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="account-id">Conta de Origem</label>
+            <input
+              type="text"
+              id="account-id"
+              class="form-input"
+              placeholder="Ex: 1001"
+              maxlength="20"
+            />
+          </div>
+
+          <div class="form-group" id="to-account-group" style="display:none">
+            <label class="form-label" for="to-account-id">Conta de Destino</label>
+            <input
+              type="text"
+              id="to-account-id"
+              class="form-input"
+              placeholder="Ex: 1002"
+              maxlength="20"
+            />
+          </div>
+
+          <div class="form-group" id="value-group">
+            <label class="form-label" for="value">Valor da Transação (R$)</label>
+            <input
+              type="number"
+              id="value"
+              class="form-input"
+              placeholder="0,00"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div class="form-error" id="form-error"></div>
+
+          <button class="btn btn-primary" id="btn-send" disabled>
+            Enviar Requisição
+          </button>
+        </section>
+
+        <!-- RESULTADO DA RESPOSTA -->
+        <section class="card response-card">
+          <h2 class="card-title">Resposta do Servidor</h2>
+          <div class="response-display" id="response-display">
+            <div class="response-empty">
+              <span class="response-empty-icon">✉</span>
+              Aguardando transação...
+            </div>
+          </div>
+        </section>
+
+        <!-- LOG DO SISTEMA -->
+        <section class="card log-card">
+          <div class="log-header">
+            <h2 class="card-title" style="margin-bottom:0">Log do Sistema</h2>
+            <button class="btn btn-clear" id="btn-clear-log">Limpar Log</button>
+          </div>
+          <div class="log-terminal" id="log-terminal">
+            <p class="log-entry log-info">[sistema] Cliente iniciado. Conecte ao servidor para operar.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- PONTO DE ENTRADA DO SCRIPT -->
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
