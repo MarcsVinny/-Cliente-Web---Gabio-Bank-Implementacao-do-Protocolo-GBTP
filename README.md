@@ -3,9 +3,9 @@
 Este projeto é a implementação do **Cliente Web** para o protocolo **GBTP** (Gabio Bank Transaction Protocol), desenvolvido para a disciplina de **Redes de Computadores**.
 
 ## 👥 Equipe (Os Últimos Três Neurônios)
-- Gisele Dias Plastos
-- Josiane Amorim
-- Marcos Vinícius
+- Gisele Dias Plácido
+- Josiane Amorim Mendes
+- Marcos Vinícius de Oliveira Teixeira
 
 ## 📑 Protocolo GBTP
 O GBTP é um protocolo textual inspirado no CNET, estruturado em pares `CHAVE:VALOR` separados por nova linha (`\n`).
