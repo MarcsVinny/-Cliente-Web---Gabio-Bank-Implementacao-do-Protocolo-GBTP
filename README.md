@@ -46,6 +46,6 @@ O GBTP é um protocolo textual inspirado no CNET, estruturado em pares `CHAVE:VA
 - [x] Documentação completa do protocolo.
 
 ---
-**Data Limite:** 04 de junho de 2025  
+**Data Limite:** 20 de maio de 2026  
 **Disciplina:** Redes de Computadores  
 **Instituição:** ADS
