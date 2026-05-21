@@ -5,7 +5,7 @@
 import { GBTPRequest, GBTPResponse, buildRequest, parseResponse } from './protocol';
 
 // Endereço do servidor (onde o backend está rodando)
-const URL_SERVIDOR = 'ws://localhost:8080';
+const URL_SERVIDOR = 'ws://localhost:7001';
 
 // Variável que guarda a conexão
 let conexao: WebSocket | null = null;
